@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Titanic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d1e37a9a269028bf7a2e32b797289d1f0e8be4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfe0090f4ddf5d21e9a586b0ba58242d42d74f7a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Titanic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Titanic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
