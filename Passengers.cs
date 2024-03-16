@@ -1,56 +1,77 @@
-using System.Text.RegularExpressions;
+using System.Security.Cryptography;
+using Microsoft.VisualBasic.FileIO;
 
 namespace TitanicNameSpace;
 
 public partial class Passengers()
 {
+
+    private static readonly string[][] readCSV_StringArray2D = [];
     
-    public static bool[] passengerAlive_BoolArray;
+    public static string[][] GetData_Function()
+    {
 
-    private static string[] passengerName_StringArray;
+        return readCSV_StringArray2D;
 
-    private static string[] passengerGender_String;
-
-    private static int[] passengerAge_String;
-
-    private static int[] passengerFamilyNumber_Int;
-
-    private static int[] passengerSiblingNumber_Int;
-
-    private static int currentPassenger_Int = 0;
+    }
 
     public static void Initialize_Function()
     {
 
-        StreamReader readData_StreamReader = new StreamReader("train.txt");
-
-        string? data_String;
-
-        
-
-        while((data_String = readData_StreamReader.ReadLine()) != null)
-        {
-
-            if(IsAlive_GeneratedRegex().Match(data_String).Value == "0")
-            {
-
-                passengerAlive_BoolArray[currentPassenger_Int] = false;
-
-            }else
-            {
-
-                passengerAlive_BoolArray[currentPassenger_Int] = true;
-                
-            }
-
-        }
+        SetData_Function();
 
     }
 
-    [GeneratedRegex(@".*\,")]
-    private static partial Regex IsAlive_GeneratedRegex();
+    private static void SetData_Function()
+    {
 
-    [GeneratedRegex(@"[^,]*")]
-    private static partial Regex Data_GeneratedRegex();
+        string[]? readCSV_StringArray;
+
+        TextFieldParser csvRead_TextFieldParser = new(new StreamReader(""));
+
+        int totalRow_Int = 0;
+        
+        try
+        {
+
+            File.Copy("train.csv", "local.csv");
+
+            csvRead_TextFieldParser = new("local.csv");
+
+        
+        }catch (System.Exception csvRead_Exception)
+        {
+            
+            System.Console.WriteLine(csvRead_Exception);
+
+        }
+
+        _ = csvRead_TextFieldParser.ReadFields();
+
+        while((readCSV_StringArray = csvRead_TextFieldParser.ReadFields())!=null)
+        {
+
+            readCSV_StringArray2D[totalRow_Int] = readCSV_StringArray;
+
+            totalRow_Int++;
+            
+        }
+
+        try
+        {
+
+            csvRead_TextFieldParser.Dispose();
+
+            File.Delete("local.csv");
+
+        }
+        catch (System.Exception deleteLocalCsv_Exception)
+        {
+            
+            System.Console.WriteLine(deleteLocalCsv_Exception);
+
+        }        
+
+    }
 
 }
