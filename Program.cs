@@ -1,4 +1,6 @@
-﻿namespace TitanicNameSpace;
+﻿using System.Security.Cryptography;
+
+namespace TitanicNameSpace;
 
 public class MyMain
 {
@@ -31,6 +33,8 @@ public class MyMain
             System.Console.WriteLine();
                         
         }
+
+        Console.ReadKey();       
         
     }
 

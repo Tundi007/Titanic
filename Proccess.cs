@@ -51,7 +51,7 @@ public class Proccess
 
         float menInSurvivors_Int = 0;
         
-        for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
+        for(int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
 
             if(data_StringArray2D[row_Int][0].Trim() == "1")
@@ -114,18 +114,14 @@ public class Proccess
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
 
-            survivors_Int++;
-
             if(data_StringArray2D[row_Int][0].Trim() == "1")
             {
 
-                if(float.TryParse(data_StringArray2D[row_Int][5].Trim(),out float sibling_Int) &
-                    float.TryParse(data_StringArray2D[row_Int][6].Trim(),out float parch_Int))
-                {
+                survivors_Int++;
 
-                    if(sibling_Int == 0 & parch_Int == 0) lonerInSurvivors_Int++;
-
-                }
+                if(int.TryParse(data_StringArray2D[row_Int][5].Trim(),out int sibling_Int) & sibling_Int == 0 &
+                    int.TryParse(data_StringArray2D[row_Int][6].Trim(),out int parch_Int) & parch_Int == 0)
+                        lonerInSurvivors_Int++;
 
             }
             
@@ -229,7 +225,7 @@ public class Proccess
     private static void Answer7()//women vs. men survival chance
     {
 
-        float survivors_Int = 0;
+        float passenger_Int = 0;
 
         float survivedMen_Int = 0;
 
@@ -238,7 +234,7 @@ public class Proccess
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
 
-            survivors_Int++;
+            passenger_Int++;
 
             if(data_StringArray2D[row_Int][0].Trim()=="1")
             {
@@ -261,7 +257,7 @@ public class Proccess
             
         }
 
-        System.Console.WriteLine($"Chance Of Survivng As A Man: {survivedMen_Int/survivors_Int}, Chance Of Survivng As A Woman: {survivedWomen_Int/survivors_Int}\nRatio Of Survivng Women Per Men: {survivedWomen_Int/survivedMen_Int}");
+        System.Console.WriteLine($"Chance Of Survivng As A Man: {survivedMen_Int/passenger_Int}, Chance Of Survivng As A Woman: {survivedWomen_Int/passenger_Int}\nRatio Of Survivng Women Per Men: {survivedWomen_Int/passenger_Int}");
         
     }
 
@@ -282,12 +278,9 @@ public class Proccess
             if(data_StringArray2D[row_Int][0].Trim()=="1")
             {
 
-                if(float.TryParse(data_StringArray2D[row_Int][4].Trim(),out float age_Int))
-                {
-
-                    if(age_Int<12)survivedKids_Int++;else survivedAdults_Int++;
-
-                }
+                if(float.TryParse(data_StringArray2D[row_Int][4].Trim(),out float age_Int) & age_Int<12)
+                    survivedKids_Int++;else
+                        survivedAdults_Int++;
 
             }
             
