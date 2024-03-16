@@ -4,6 +4,7 @@ public class Proccess
 {
 
     private static string[][] data_StringArray2D = [];
+
     public static void Initialize_Function()
     {
 
@@ -13,6 +14,8 @@ public class Proccess
 
     public static void Question_Function(int question_Int)
     {
+
+        System.Console.WriteLine($"Answer For: {question_Int}");
 
         switch (question_Int)
         {
@@ -44,18 +47,19 @@ public class Proccess
     private static void Answer1()//possibility of finding a man in survivors
     {
 
-        int survivors_Int = 0;
+        float survivors_Int = 0;
 
-        int menInSurvivors_Int = 0;
+        float menInSurvivors_Int = 0;
         
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
-            if(data_StringArray2D[row_Int][0] == "1")
+
+            if(data_StringArray2D[row_Int][0].Trim() == "1")
             {
 
                 survivors_Int++;
 
-                if(data_StringArray2D[row_Int][3]=="male")
+                if(data_StringArray2D[row_Int][3].Trim()=="male")
                 {
 
                     menInSurvivors_Int++;
@@ -66,25 +70,26 @@ public class Proccess
             
         }
 
-        System.Console.WriteLine("Chance Of Finiding A Man In Survivors: " + menInSurvivors_Int/survivors_Int);
+        System.Console.WriteLine($"Chance Of Finiding A Man In Survivors: {menInSurvivors_Int/survivors_Int}");
 
     }
 
     private static void Answer2()//possibility of finding a kid (age<12) in survivors
     {
 
-        int survivors_Int = 0;
+        float survivors_Int = 0;
 
-        int kidsInSurvivors_Int = 0;
+        float kidsInSurvivors_Int = 0;
         
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
-            if(data_StringArray2D[row_Int][0] == "1")
+
+            if(data_StringArray2D[row_Int][0].Trim() == "1")
             {
 
                 survivors_Int++;
 
-                if(int.TryParse(data_StringArray2D[row_Int][4],out int age_Int) & age_Int<12)
+                if(float.TryParse(data_StringArray2D[row_Int][4].Trim(),out float age_Int) & age_Int<12)
                 {
 
                     kidsInSurvivors_Int++;
@@ -95,27 +100,27 @@ public class Proccess
             
         }
 
-        System.Console.WriteLine("Chance Of Finiding A Kid In Survivors: " + kidsInSurvivors_Int/survivors_Int);
+        System.Console.WriteLine($"Chance Of Finiding A Kid In Survivors: {kidsInSurvivors_Int/survivors_Int}");
 
     }
 
     private static void Answer3()//possibility of finding lone passenger in survivors
     {
 
-        int survivors_Int = 0;
+        float survivors_Int = 0;
 
-        int lonerInSurvivors_Int = 0;
+        float lonerInSurvivors_Int = 0;
 
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
 
             survivors_Int++;
 
-            if(data_StringArray2D[row_Int][0] == "1")
+            if(data_StringArray2D[row_Int][0].Trim() == "1")
             {
 
-                if(int.TryParse(data_StringArray2D[row_Int][5],out int sibling_Int) &
-                    int.TryParse(data_StringArray2D[row_Int][6],out int parch_Int))
+                if(float.TryParse(data_StringArray2D[row_Int][5].Trim(),out float sibling_Int) &
+                    float.TryParse(data_StringArray2D[row_Int][6].Trim(),out float parch_Int))
                 {
 
                     if(sibling_Int == 0 & parch_Int == 0) lonerInSurvivors_Int++;
@@ -126,26 +131,26 @@ public class Proccess
             
         }
 
-        System.Console.WriteLine("Chance Of Finiding A Loner In Survivors: " + lonerInSurvivors_Int/survivors_Int);
+        System.Console.WriteLine($"Chance Of Finiding A Loner In Survivors: {lonerInSurvivors_Int/survivors_Int}");
 
     }
 
     private static void Answer4()//survival chance of men
     {
 
-        int men_Int = 0;
+        float men_Int = 0;
 
-        int survivedMen_Int = 0;
+        float survivedMen_Int = 0;
         
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
 
-            if(data_StringArray2D[row_Int][3] == "male")
+            if(data_StringArray2D[row_Int][3].Trim() == "male")
             {
 
                 men_Int++;
 
-                if(data_StringArray2D[row_Int][0]=="1")
+                if(data_StringArray2D[row_Int][0].Trim()=="1")
                 {
                     
                     survivedMen_Int++;
@@ -156,26 +161,26 @@ public class Proccess
             
         }
 
-        System.Console.WriteLine("Chance Of Survivng As A Man: " + survivedMen_Int/men_Int);
+        System.Console.WriteLine($"Chance Of Survivng As A Man: {survivedMen_Int/men_Int}");
 
     }
 
-    private static void Answer5()//survival chance of kdis(age<12)
+    private static void Answer5()//survival chance of kids(age<12)
     {
 
-        int kids_Int = 0;
+        float kids_Int = 0;
 
-        int survivedKids_Int = 0;
+        float survivedKids_Int = 0;
         
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
             
-            if(int.TryParse(data_StringArray2D[row_Int][4],out int age_Int) & age_Int<12)
+            if(float.TryParse(data_StringArray2D[row_Int][4].Trim(),out float age_Int) & age_Int<12)
             {
 
                 kids_Int++;
 
-                if(data_StringArray2D[row_Int][0]=="1")
+                if(data_StringArray2D[row_Int][0].Trim()=="1")
                 {
                     
                     survivedKids_Int++;
@@ -186,27 +191,27 @@ public class Proccess
             
         }
 
-        System.Console.WriteLine("Chance Of Survivng As A Man: " + survivedKids_Int/kids_Int);
+        System.Console.WriteLine($"Chance Of Survivng As A Kid: {survivedKids_Int/kids_Int}");
         
     }
 
     private static void Answer6()//survival chance of lone passengers
     {
 
-        int loners_Int = 0;
+        float loners_Int = 0;
 
-        int survivedLoners_Int = 0;
+        float survivedLoners_Int = 0;
         
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
             
-            if(int.TryParse(data_StringArray2D[row_Int][5],out int siblings_Int) & siblings_Int == 0 &
-                int.TryParse(data_StringArray2D[row_Int][6],out int parch_Int) & parch_Int == 0)
+            if(float.TryParse(data_StringArray2D[row_Int][5].Trim(),out float siblings_Int) & siblings_Int == 0 &
+                float.TryParse(data_StringArray2D[row_Int][6].Trim(),out float parch_Int) & parch_Int == 0)
             {
 
                 loners_Int++;
 
-                if(data_StringArray2D[row_Int][0]=="1")
+                if(data_StringArray2D[row_Int][0].Trim()=="1")
                 {
                     
                     survivedLoners_Int++;
@@ -217,35 +222,35 @@ public class Proccess
             
         }
 
-        System.Console.WriteLine("Chance Of Survivng As A Man: " + survivedLoners_Int/loners_Int);
+        System.Console.WriteLine($"Chance Of Survivng As A Man: {survivedLoners_Int/loners_Int}");
         
     }
 
     private static void Answer7()//women vs. men survival chance
     {
 
-        int survivors_Int = 0;
+        float survivors_Int = 0;
 
-        int survivedMen_Int = 0;
+        float survivedMen_Int = 0;
 
-        int survivedWomen_Int = 0;
+        float survivedWomen_Int = 0;
         
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
 
             survivors_Int++;
 
-            if(data_StringArray2D[row_Int][0]=="1")
+            if(data_StringArray2D[row_Int][0].Trim()=="1")
             {
 
-                if(data_StringArray2D[row_Int][3] == "male")
+                if(data_StringArray2D[row_Int][3].Trim() == "male")
                 {
                     
                     survivedMen_Int++;
 
                 }
 
-                if(data_StringArray2D[row_Int][3] == "female")
+                if(data_StringArray2D[row_Int][3].Trim() == "female")
                 {
                     
                     survivedWomen_Int++;
@@ -263,21 +268,21 @@ public class Proccess
     private static void Answer8()//adults vs. kids survival chance
     {
 
-        int survivors_Int = 0;
+        float survivors_Int = 0;
 
-        int survivedKids_Int = 0;
+        float survivedKids_Int = 0;
 
-        int survivedAdults_Int = 0;
+        float survivedAdults_Int = 0;
         
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
 
             survivors_Int++;
 
-            if(data_StringArray2D[row_Int][0]=="1")
+            if(data_StringArray2D[row_Int][0].Trim()=="1")
             {
 
-                if(int.TryParse(data_StringArray2D[row_Int][4],out int age_Int))
+                if(float.TryParse(data_StringArray2D[row_Int][4].Trim(),out float age_Int))
                 {
 
                     if(age_Int<12)survivedKids_Int++;else survivedAdults_Int++;
@@ -295,22 +300,22 @@ public class Proccess
     private static void Answer9()//passengers w/ companion(s) vs. lone passengers survival chance
     {
 
-        int survivors_Int = 0;
+        float survivors_Int = 0;
 
-        int lonerSurvivors_Int = 0;
+        float lonerSurvivors_Int = 0;
 
-        int withCompanoin_Int = 0;
+        float withCompanoin_Int = 0;
 
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
 
             survivors_Int++;
 
-            if(data_StringArray2D[row_Int][0] == "1")
+            if(data_StringArray2D[row_Int][0].Trim() == "1")
             {
 
-                if(int.TryParse(data_StringArray2D[row_Int][5],out int sibling_Int) & sibling_Int == 0 &
-                    int.TryParse(data_StringArray2D[row_Int][6],out int parch_Int) & parch_Int == 0)
+                if(float.TryParse(data_StringArray2D[row_Int][5].Trim(),out float sibling_Int) & sibling_Int == 0 &
+                    float.TryParse(data_StringArray2D[row_Int][6].Trim(),out float parch_Int) & parch_Int == 0)
                             lonerSurvivors_Int++;else
                                 withCompanoin_Int++;
 

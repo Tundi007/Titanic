@@ -1,0 +1,15 @@
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\bin\Debug\net8.0\Titanic.exe
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\bin\Debug\net8.0\Titanic.deps.json
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\bin\Debug\net8.0\Titanic.runtimeconfig.json
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\bin\Debug\net8.0\Titanic.dll
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\bin\Debug\net8.0\Titanic.pdb
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\obj\Debug\net8.0\Titanic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\obj\Debug\net8.0\Titanic.AssemblyInfoInputs.cache
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\obj\Debug\net8.0\Titanic.AssemblyInfo.cs
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\obj\Debug\net8.0\Titanic.csproj.CoreCompileInputs.cache
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\obj\Debug\net8.0\Titanic.sourcelink.json
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\obj\Debug\net8.0\Titanic.dll
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\obj\Debug\net8.0\refint\Titanic.dll
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\obj\Debug\net8.0\Titanic.pdb
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\obj\Debug\net8.0\Titanic.genruntimeconfig.cache
+C:\Custom\Softwares\Git\Project\S&P\01 Titanic\Titanic\obj\Debug\net8.0\ref\Titanic.dll
