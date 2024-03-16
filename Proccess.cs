@@ -89,7 +89,7 @@ public class Proccess
 
                 survivors_Int++;
 
-                if(float.TryParse(data_StringArray2D[row_Int][4].Trim(),out float age_Int) & age_Int<12)
+                if(int.TryParse(data_StringArray2D[row_Int][4].Trim(),out int age_Int) & age_Int<12)
                 {
 
                     kidsInSurvivors_Int++;
@@ -201,8 +201,8 @@ public class Proccess
         for (int row_Int = 0; row_Int < data_StringArray2D.Length; row_Int++)
         {
             
-            if(float.TryParse(data_StringArray2D[row_Int][5].Trim(),out float siblings_Int) & siblings_Int == 0 &
-                float.TryParse(data_StringArray2D[row_Int][6].Trim(),out float parch_Int) & parch_Int == 0)
+            if(int.TryParse(data_StringArray2D[row_Int][5].Trim(),out int siblings_Int) & siblings_Int == 0 &
+                int.TryParse(data_StringArray2D[row_Int][6].Trim(),out int parch_Int) & parch_Int == 0)
             {
 
                 loners_Int++;
@@ -278,7 +278,7 @@ public class Proccess
             if(data_StringArray2D[row_Int][0].Trim()=="1")
             {
 
-                if(float.TryParse(data_StringArray2D[row_Int][4].Trim(),out float age_Int) & age_Int<12)
+                if(int.TryParse(data_StringArray2D[row_Int][4].Trim(),out int age_Int) & age_Int<12)
                     survivedKids_Int++;else
                         survivedAdults_Int++;
 
@@ -307,8 +307,8 @@ public class Proccess
             if(data_StringArray2D[row_Int][0].Trim() == "1")
             {
 
-                if(float.TryParse(data_StringArray2D[row_Int][5].Trim(),out float sibling_Int) & sibling_Int == 0 &
-                    float.TryParse(data_StringArray2D[row_Int][6].Trim(),out float parch_Int) & parch_Int == 0)
+                if(int.TryParse(data_StringArray2D[row_Int][5].Trim(),out int sibling_Int) & sibling_Int == 0 &
+                    int.TryParse(data_StringArray2D[row_Int][6].Trim(),out int parch_Int) & parch_Int == 0)
                             lonerSurvivors_Int++;else
                                 withCompanoin_Int++;
 
